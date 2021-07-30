@@ -15,11 +15,24 @@ public class playerMovement : MonoBehaviour
         myBody=GetComponent<Rigidbody>();
     }
 
+    void Update() {
+        rotatePlayer();
+    }
+
     void FixedUpdate() {
         DetectMovement();
     }
 
     void DetectMovement(){
         myBody.velocity=new Vector3(Input.GetAxisRaw("Horizontal")*(-walkSpeed), myBody.velocity.y, Input.GetAxisRaw("Vertical")*(-zSpeed));
+    }
+
+    void rotatePlayer(){
+       if(Input.GetAxisRaw("Horizontal")>0){
+           transform.rotation=Quaternion.Euler(0f, rotationY, 0f);
+       }
+       else if(Input.GetAxisRaw("Vertical")<0){
+           transform.rotation=Quaternion.Euler(0f, Mathf.Abs(rotationY), 0f);
+       } 
     }
 }
