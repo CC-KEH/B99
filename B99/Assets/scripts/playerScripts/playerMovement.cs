@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private playerAnimation player_animation;
     private Rigidbody myBody;
     public float walkSpeed=3f;
     public float zSpeed=1.5f;
@@ -13,10 +13,12 @@ public class playerMovement : MonoBehaviour
     void Awake()
     {
         myBody=GetComponent<Rigidbody>();
+        player_animation=GetComponentInChildren<playerAnimation>();
     }
 
     void Update() {
         rotatePlayer();
+        animatePlayerWalk();
     }
 
     void FixedUpdate() {
@@ -34,5 +36,12 @@ public class playerMovement : MonoBehaviour
        else if(Input.GetAxisRaw("Vertical")<0){
            transform.rotation=Quaternion.Euler(0f, Mathf.Abs(rotationY), 0f);
        } 
+    }
+
+    void animatePlayerWalk(){
+        if(Input.GetAxisRaw("Horizontal")!=0||Input.GetAxisRaw("Vertical")!=0){
+            player_animation.Walk(true);
+        }
+        else{player_animation.Walk(false);}
     }
 }
