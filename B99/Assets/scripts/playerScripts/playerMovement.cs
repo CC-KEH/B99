@@ -33,7 +33,7 @@ public class playerMovement : MonoBehaviour
        if(Input.GetAxisRaw("Horizontal")>0){
            transform.rotation=Quaternion.Euler(0f, rotationY, 0f);
        }
-       else if(Input.GetAxisRaw("Vertical")<0){
+       else if(Input.GetAxisRaw("Horizontal") <0){
            transform.rotation=Quaternion.Euler(0f, Mathf.Abs(rotationY), 0f);
        } 
     }
