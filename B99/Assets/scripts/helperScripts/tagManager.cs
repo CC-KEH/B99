@@ -28,7 +28,7 @@ public class Axes{
         public const string VERTICAL_AXIS="Vertical";
     }
 
-public class Tagus{
+public class Tags{
     public const string GROUND_TAG="Ground";
     public const string PLAYER_TAG="Player";
     public const string ENEMY_TAG="Enemy";

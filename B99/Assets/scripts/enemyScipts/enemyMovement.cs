@@ -23,7 +23,7 @@ public class enemyMovement : MonoBehaviour
         enemyAnimations=GetComponentInChildren<enemyAnimations>();
         myBody=GetComponent<Rigidbody>();
 
-        playerTarget=GameObject.FindWithTag(Tagus.PLAYER_TAG).transform;
+        playerTarget=GameObject.FindWithTag(Tags.PLAYER_TAG).transform;
     }
     void Start()
     {

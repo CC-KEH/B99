@@ -21,7 +21,7 @@ public class playerAttack : MonoBehaviour
 
     private ComboState currentComboState;
 
-    private playerAnimation player_animation;
+    private characterAnimation player_animation;
     void Start()
     {
         current_Combo_Timer=default_Combo_Timer;
@@ -30,7 +30,7 @@ public class playerAttack : MonoBehaviour
     }
 
     void Awake() {
-        player_animation=GetComponentInChildren<playerAnimation>();
+        player_animation=GetComponentInChildren<characterAnimation>();
     }
 
     // Update is called once per frame
