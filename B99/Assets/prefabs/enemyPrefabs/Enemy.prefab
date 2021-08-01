@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5904946948928054036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e962f1e59135ec43824f49e168ce556, type: 3}
+  m_Script: {fileID: 11500000, guid: 03902c580ccbfd046b0059e72425bfaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5904946949518194188
@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 916308598}
   - component: {fileID: 916308597}
   - component: {fileID: 2576492653959153183}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,6 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8629c36dd620454458bdd421a6574cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 2
+  attackDistance: 0.8
 --- !u!1001 &5904946948928153012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,7 +119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.71178097
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -125,7 +127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7024015
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -137,7 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -89.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
