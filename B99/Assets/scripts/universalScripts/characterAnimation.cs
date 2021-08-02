@@ -43,4 +43,23 @@ public class characterAnimation : MonoBehaviour
     public void Kick2(){
         animator.SetTrigger(AniTags.KICK_2_TRIGGER);
     }
+    public void KnockDown()
+    {
+        animator.SetTrigger(AniTags.KNOCK_DOWN_TRIGGER);
+    }
+
+    public void StandUp()
+    {
+        animator.SetTrigger(AniTags.STAND_UP_TRIGGER);
+    }
+
+    public void Hit()
+    {
+        animator.SetTrigger(AniTags.HIT_TRIGGER);
+    }
+
+    public void Death()
+    {
+        animator.SetTrigger(AniTags.DEATH_TRIGGER);
+    }
 }
