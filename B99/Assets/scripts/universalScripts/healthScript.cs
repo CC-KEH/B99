@@ -14,7 +14,7 @@ public class healthScript : MonoBehaviour
         animationScript = GetComponentInChildren<characterAnimation>(); 
 
     }
-    public void applyAnimation(float damage, bool knockDown)
+    public void ApplyDamage(float damage, bool knockDown)
     {
         if (characterDied)
             return;

@@ -35,14 +35,22 @@ public class attackUniversal : MonoBehaviour
                 Instantiate(hit_FX_Prefab,hitFX_Pos,Quaternion.identity);
                 if (gameObject.CompareTag(Tags.LEFT_ARM_TAG) || gameObject.CompareTag(Tags.LEFT_LEG_TAG))
                 {
-                    //hit[0].GetComponent<HealthScript>().ApplyDamage(damage, true);
+                    hit[0].GetComponent<healthScript>().ApplyDamage(damage, true);
                 }
                 else
                 {
-                    //hit[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
+                    hit[0].GetComponent<healthScript>().ApplyDamage(damage, false);
                 }
             
             }
+
+            if (is_Enemy)
+            {
+                hit[0].GetComponent<healthScript>().ApplyDamage(damage, true);
+            }
+
+            gameObject.SetActive(false);
+        }
         }
     }
-}
+
