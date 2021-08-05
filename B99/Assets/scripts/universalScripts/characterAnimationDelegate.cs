@@ -5,6 +5,7 @@ using UnityEngine;
 public class characterAnimationDelegate : MonoBehaviour
 {
     public GameObject left_Arm_Attack_Point, right_Arm_Attack_Point, left_Leg_Attack_Point, right_Leg_Attack_Point;
+<<<<<<< Updated upstream
     public float Stand_Up_Timer=2f;
 
     private enemyAnimations animationScript;
@@ -22,6 +23,13 @@ public class characterAnimationDelegate : MonoBehaviour
         if(gameObject.CompareTag(Tags.ENEMY_TAG)){
             enemy_Movement=GetComponentInParent<enemyMovement>();
         }
+=======
+    public float stand_Up_Timer=2f;
+    private enemyAnimations animationScript;
+
+    void Awake(){
+        animationScript=GetComponent<enemyAnimations>();
+>>>>>>> Stashed changes
     }
     void left_Arm_Attack_On()
     {
@@ -66,7 +74,12 @@ public class characterAnimationDelegate : MonoBehaviour
         {
             left_Leg_Attack_Point.SetActive(false);
         }
+    }
+
+    void TagLeft_Arm(){
+        left_Arm_Attack_Point.tag=Tags.LEFT_ARM_TAG;
     } 
+<<<<<<< Updated upstream
      void TagLeft_Arm()
     {
         left_Arm_Attack_Point.tag = Tags.LEFT_ARM_TAG;
@@ -124,6 +137,17 @@ public class characterAnimationDelegate : MonoBehaviour
     {
         enemy_Movement.enabled = true;
         transform.parent.gameObject.layer = 10;
+=======
+
+    void UnTagLeft_Arm(){
+        left_Arm_Attack_Point.tag=Tags.UNTAGGED_TAG;
+    }
+    void TagLeft_Leg(){
+        left_Leg_Attack_Point.tag=Tags.LEFT_LEG_TAG;
+    } 
+    void UnTagLeft_Leg(){
+        left_Leg_Attack_Point.tag=Tags.UNTAGGED_TAG;
+>>>>>>> Stashed changes
     }
 }
 
