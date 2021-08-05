@@ -18,6 +18,7 @@ public class healthScript : MonoBehaviour
     {
         if (characterDied)
             return;
+
         health -= damage;
         if (health <= 0f)
         {
@@ -48,3 +49,4 @@ public class healthScript : MonoBehaviour
         }
     }
 }
+ 

@@ -9,16 +9,7 @@ public class enemyAnimations : MonoBehaviour
     void Awake(){
         animator=GetComponent<Animator>();
     }
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
+    
     public void EnemyAttack(int attack){
         if(attack==0){
             animator.SetTrigger(AniTags.ATTACK_1_TRIGGER);
