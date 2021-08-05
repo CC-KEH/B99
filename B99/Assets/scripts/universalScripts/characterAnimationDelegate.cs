@@ -15,6 +15,8 @@ public class characterAnimationDelegate : MonoBehaviour
 
     [SerializeField]private AudioClip wooshSound, fallSound, groundHitSound, deadSound;
 
+    private ShakeCamera shake;
+
     void Awake(){
         animationScript=GetComponent<enemyAnimations>();
         audioSource=GetComponent<AudioSource>();
@@ -22,6 +24,7 @@ public class characterAnimationDelegate : MonoBehaviour
         if(gameObject.CompareTag(Tags.ENEMY_TAG)){
             enemy_Movement=GetComponentInParent<enemyMovement>();
         }
+        shake=GameObject.FindWithTag(Tags.MAIN_CAMERA_TAG).GetComponent<ShakeCamera>();
     }
     void left_Arm_Attack_On()
     {
@@ -124,6 +127,10 @@ public class characterAnimationDelegate : MonoBehaviour
     {
         enemy_Movement.enabled = true;
         transform.parent.gameObject.layer = 10;
+    }
+
+    void ShakeCameraOnFall(){
+        shake.ShouldShake=true;
     }
 }
 
