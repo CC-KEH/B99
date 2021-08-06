@@ -10,16 +10,6 @@ public class characterAnimation : MonoBehaviour
     void Awake(){
         animator=GetComponent<Animator>();
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Walk(bool move){
         animator.SetBool(AniTags.MOVEMENT, move);
@@ -43,6 +33,30 @@ public class characterAnimation : MonoBehaviour
     public void Kick2(){
         animator.SetTrigger(AniTags.KICK_2_TRIGGER);
     }
+     // Enemy Animations
+    public void EnemyAttack(int attack)
+    {
+        if (attack == 0)
+        {
+            animator.SetTrigger(AniTags.ATTACK_1_TRIGGER);
+        }
+
+        if (attack == 1)
+        {
+            animator.SetTrigger(AniTags.ATTACK_2_TRIGGER);
+        }
+
+        if (attack == 2)
+        {
+            animator.SetTrigger(AniTags.ATTACK_3_TRIGGER);
+        }
+    }
+
+    public void PlayIdleAnimation()
+    {
+        animator.Play(AniTags.IDLE_ANIMATION);
+    }
+
     public void KnockDown()
     {
         animator.SetTrigger(AniTags.KNOCK_DOWN_TRIGGER);

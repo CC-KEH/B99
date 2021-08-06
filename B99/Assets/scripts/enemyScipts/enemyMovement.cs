@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemyMovement : MonoBehaviour
 {
-    private enemyAnimations enemyAnimations;
+    private characterAnimation enemyAnimations;
     private Rigidbody myBody;
 
     public float Speed=5f;
@@ -20,7 +20,7 @@ public class enemyMovement : MonoBehaviour
     private bool followPlayer, attackPlayer;
 
     void Awake() {
-        enemyAnimations=GetComponentInChildren<enemyAnimations>();
+        enemyAnimations=GetComponentInChildren<characterAnimation>();
         myBody=GetComponent<Rigidbody>();
 
         playerTarget=GameObject.FindWithTag(Tags.PLAYER_TAG).transform;
@@ -28,14 +28,12 @@ public class enemyMovement : MonoBehaviour
     void Start()
     {
        followPlayer=true;
-       currentAttackTime=defaultAttackTime; 
+       currentAttackTime = defaultAttackTime; 
     }
 
     void Update() {
         Attack();
-    }
-
-    // Update is called once per frame
+    }  
     void FixedUpdate()
     {
         followTarget();
@@ -67,7 +65,7 @@ public class enemyMovement : MonoBehaviour
         if(!attackPlayer)
         return;
 
-        currentAttackTime+=Time.deltaTime;
+        currentAttackTime += Time.deltaTime;
         if(currentAttackTime>defaultAttackTime){
             enemyAnimations.EnemyAttack(Random.Range(0,3));
             currentAttackTime=0f;

@@ -7,7 +7,7 @@ public class characterAnimationDelegate : MonoBehaviour
     public GameObject left_Arm_Attack_Point, right_Arm_Attack_Point, left_Leg_Attack_Point, right_Leg_Attack_Point;
     public float Stand_Up_Timer=2f;
 
-    private enemyAnimations animationScript;
+    private characterAnimation animationScript;
 
     private enemyMovement enemy_Movement;
 
@@ -18,7 +18,7 @@ public class characterAnimationDelegate : MonoBehaviour
     private ShakeCamera shake;
 
     void Awake(){
-        animationScript=GetComponent<enemyAnimations>();
+        animationScript=GetComponent<characterAnimation>();
         audioSource=GetComponent<AudioSource>();
 
         if(gameObject.CompareTag(Tags.ENEMY_TAG)){
