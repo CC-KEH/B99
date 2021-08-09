@@ -8,7 +8,7 @@ public class ShakeCamera : MonoBehaviour
     public float power = 0.2f;
     public float duration = 0.2f;   
     public float slowDownAmount = 1f;
-    private bool should_Shake;
+    private bool shouldShake;
     private float initialDuration;
 
     private Vector3 startPosition;
@@ -26,7 +26,7 @@ public class ShakeCamera : MonoBehaviour
 
     void Shake()
     {
-        if (should_Shake)
+        if (shouldShake)
         {
             if (duration > 0)
             {
@@ -35,7 +35,7 @@ public class ShakeCamera : MonoBehaviour
             }
             else
             {
-                should_Shake = false;
+                shouldShake = false;
                 duration = initialDuration;
                 transform.localPosition = startPosition;
             }
@@ -47,11 +47,11 @@ public class ShakeCamera : MonoBehaviour
     {
         get
         {
-            return should_Shake;
+            return shouldShake;
         }
         set
         {
-            should_Shake = value;
+            shouldShake = value;
         }
     }
 }
