@@ -9,9 +9,12 @@ public class healthScript : MonoBehaviour
     private enemyMovement enemymovement;
     private bool characterDied;
     public bool is_Player;
+    private healthUI health_UI;
     void Awake()
     {
         animationScript = GetComponentInChildren<characterAnimation>(); 
+        if(is_Player)
+        health_UI=GetComponent<healthUI>();
 
     }
     public void ApplyDamage(float damage, bool knockDown)
@@ -20,6 +23,7 @@ public class healthScript : MonoBehaviour
             return;
 
         health -= damage;
+        health_UI.DisplayHealth(health);
         if (health <= 0f)
         {
             animationScript.Death();
